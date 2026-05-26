@@ -1,0 +1,14 @@
+title: Solo Traveler Media
+description: Empowering solo travelers through tools, content, and community.
+url: "https://solotravelermedia.com"
+baseurl: ""
+permalink: /:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

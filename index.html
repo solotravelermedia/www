@@ -1,0 +1,76 @@
+---
+layout: default
+title: Home
+description: Empowering solo travelers through tools, content, and community.
+---
+<header class="text-center">
+  <div class="container">
+    <h1>Solo Traveler Media</h1>
+    <p class="lead">Empowering solo travelers through tools, content, and community.</p>
+  </div>
+</header>
+<section id="mission" class="section section-light text-center">
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p class="mt-3">Solo Traveler Media Group empowers and supports solo travelers around the world through inspiring content, practical tools, and community-driven resources. We advocate for fair treatment of solo travelers and aim to make solo travel more accessible, inclusive, and rewarding for everyone.</p>
+  </div>
+</section>
+<section id="whatwedo" class="section section-dark text-center">
+  <div class="container">
+    <h2>What We Do</h2>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <h5>Curated Content</h5>
+        <p>From travel guides to safety tips and blog features, we provide resources tailored to solo travelers.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Tools & Services</h5>
+        <p>We build practical tools including packing checklists, time zone converters, and trip planning platforms.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Community & Advocacy</h5>
+        <p>We champion fair pricing and recognition for solo travelers across the travel industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="properties" class="section section-light text-center">
+  <div class="container">
+    <h2>Our Properties</h2>
+    <ul class="list-unstyled mt-4">
+      <li><a href="https://www.solotraveler.org" target="_blank" rel="noopener">Solo Traveler Blog</a></li>
+      <li><a href="https://www.solotravelsociety.com" target="_blank" rel="noopener">Solo Travel Society</a></li>
+    </ul>
+  </div>
+</section>
+<section class="section section-dark text-center">
+  <div class="container">
+    <h2>Latest from the Blog</h2>
+    {% assign recent_posts = site.posts | slice: 0, 3 %}
+    {% if recent_posts.size > 0 %}
+    <div class="row mt-4">
+      {% for post in recent_posts %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 text-start">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h5>
+            <p class="small text-muted">{{ post.date | date: "%B %-d, %Y" }}</p>
+            <p>{{ post.excerpt | strip_html | truncate: 130 }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <a class="btn btn-primary" href="{{ '/blog/' | relative_url }}">Read the Blog</a>
+    {% else %}
+    <p class="mt-3">Blog posts are coming soon.</p>
+    {% endif %}
+  </div>
+</section>
+<section id="contact" class="section section-dark text-center">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="mt-3">Have a question, media inquiry, or partnership idea? Reach out to us.</p>
+    <a class="btn btn-primary" href="mailto:info@solotravelermedia.com">Email Us</a>
+  </div>
+</section>
